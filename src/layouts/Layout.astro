@@ -1,7 +1,11 @@
 ---
 import "../styles/global.css";
 import '@fontsource/poppins';
-
+import Phone from "../components/icons/Phone.astro";
+import Mail from "../components/icons/Mail.astro";
+import Menu from "../../public/icons/menu.svg";
+import Logo from "../../public/logo/logo.svg";
+import Search from "../../public/icons/search.svg";
 ---
 <!doctype html>
 <html lang="en">
@@ -12,23 +16,66 @@ import '@fontsource/poppins';
     <meta name="generator" content={Astro.generator}/>
     <title>Astro Basics</title>
 </head>
-<body>
-<header class="w-full h-24">
-    <div class="flex gap-4 flex-row justify-center items-center h-full">
-        <p>LOGO</p>
-        <div class="w-[30%]"/>
-        <div>
-            TELEFONO
+<body class=" !h-[5000px]">
+<header id="main-header" class="hidden sm:block w-full h-24">
+    <div class="flex gap-8 flex-row justify-between items-center w-[80%] mx-auto h-full">
+        <Logo  width={143} height={50} />
+        <div class="flex flex-row gap-8">
+            <div class="flex flex-row justify-between gap-2">
+                <div class="rounded-full bg-primary p-3 text-white">
+                    <Phone/>
+                </div>
+                <div>
+                    <p>51 00 0000 0000</p>
+                    <p>51 00 0000 0000</p>
+                </div>
+            </div>
+            <div class="flex flex-row justify-between gap-2">
+                <div class="rounded-full bg-primary p-3 text-white">
+                    <Mail/>
+                </div>
+                <div>
+                    <p>mail@localhost.xyz</p>
+                    <p>mail@localhost.xyz</p>
+                </div>
+            </div>
+            <div class="px-5 py-3 bg-primary text-white rounded-3xl">
+                APPOINTMENT
+            </div>
         </div>
-        <div>
-            EMAIL
-        </div>
-        <div class="px-4 py-3 bg-primary text-white rounded-3xl">
-            APPOINTMENT
-        </div>
+
     </div>
 </header>
+<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-white z-10">
+    <div class="bg-primary h-full p-4 flex flex-row justify-between">
+        <img class="h-full w-40 sm:hidden " src="/logo/logo_white.svg" alt="Logo"/>
+        <ul class="hidden sm:flex flex-row items-center text-white uppercase gap-4 justify-between">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Gallery</li>
+            <li>Contact</li>
+        </ul>
+        <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
+            <Menu class="sm:hidden" width={30} height={30}/>
+            <Search width={30} height={30}/>
+        </div>
+    </div>
+</nav>
+<div class="w-full mx-auto -mt-26 z-0"  style={
+    {
+        backgroundImage: "url('/images/slider_001.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "calc(100vh - 150px)"
+    }
+}>
+</div>
+
 <slot/>
+<footer>
+    asdasdads
+</footer>
 </body>
 </html>
 
@@ -40,3 +87,19 @@ import '@fontsource/poppins';
         height: 100%;
     }
 </style>
+<script>
+
+    const nav = document.getElementById('main-nav');
+    const header = document.getElementById('main-header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > header.offsetHeight) {
+            nav.classList.add('fixed', 'inset-0', 'w-full', 'z-10');
+            nav.classList.remove('relative');
+        } else {
+            nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
+            nav.classList.add('relative');
+        }
+    });
+
+</script>
