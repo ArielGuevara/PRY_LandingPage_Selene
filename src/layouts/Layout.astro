@@ -1,9 +1,10 @@
 ---
 import "../styles/global.css";
 import '@fontsource/poppins';
-import Ancle from "../components/Ancle.astro";
+// import Ancle from "../components/Ancle.astro";
 import Search from "../../public/icons/search.svg"
 import Logo from "../../public/logo/logo_white.svg"
+import Menu from "../../public/icons/menu.svg"
 import Phone from "../../public/icons/phone.svg"
 import Mail from "../../public/icons/mail.svg"
 ---
@@ -45,19 +46,19 @@ import Mail from "../../public/icons/mail.svg"
         </div>
     </div>
 </header>
-<nav class="flex  bg-primary mx-auto w-[75%] h-20 justify-between items-center flex-row border-r-15 border-l-15 border-b-15 border-background z-10">
-   <div class="flex gap-6 h-full">
-       <Ancle text="Inicio" path="Inicio"/>
-       <Ancle text="Nosotros" path="Sobre Nosotros"/>
-       <Ancle text="Servicios" path="Servicios"/>
-       <Ancle text="Contact" path="Contact"/>
-       <Ancle text="Dentist" path="Dentist"/>
-       <Ancle text="Blog" path="Blog"/>
-   </div>
-    <div class="flex p-3 items-center mr-4 hover:bg-primary-light">
-        <Search/>
-    </div>
-</nav>
+<!--<nav class="flex  bg-primary mx-auto w-[75%] h-20 justify-between items-center flex-row border-r-15 border-l-15 border-b-15 border-background z-10">-->
+<!--   <div class="flex gap-6 h-full">-->
+<!--       <Ancle text="Inicio" path="Inicio"/>-->
+<!--       <Ancle text="Nosotros" path="Sobre Nosotros"/>-->
+<!--       <Ancle text="Servicios" path="Servicios"/>-->
+<!--       <Ancle text="Contact" path="Contact"/>-->
+<!--       <Ancle text="Dentist" path="Dentist"/>-->
+<!--       <Ancle text="Blog" path="Blog"/>-->
+<!--   </div>-->
+<!--    <div class="flex p-3 items-center mr-4 hover:bg-primary-light">-->
+<!--        <Search/>-->
+<!--    </div>-->
+<!--</nav>-->
 
 <nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-white z-10">
     <div class="bg-primary h-full p-4 flex flex-row justify-between">
@@ -103,18 +104,23 @@ import Mail from "../../public/icons/mail.svg"
     }
 </style>
 <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.getElementById('main-nav');
+        const header = document.getElementById('main-header');
 
-    const nav = document.getElementById('main-nav');
-    const header = document.getElementById('main-header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > header.offsetHeight) {
-            nav.classList.add('fixed', 'inset-0', 'w-full', 'z-10');
-            nav.classList.remove('relative');
-        } else {
-            nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
-            nav.classList.add('relative');
+        if (!nav || !header) {
+            console.error('El elemento #main-nav o #main-header no está presente en el DOM.');
+            return; // Sal de la función si no existen
         }
-    });
 
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > header.offsetHeight) {
+                nav.classList.add('fixed', 'inset-0', 'w-full', 'z-10');
+                nav.classList.remove('relative');
+            } else {
+                nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
+                nav.classList.add('relative');
+            }
+        });
+    });
 </script>
