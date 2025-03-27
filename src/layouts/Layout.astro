@@ -59,6 +59,32 @@ import Mail from "../../public/icons/mail.svg"
     </div>
 </nav>
 
+<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-white z-10">
+    <div class="bg-primary h-full p-4 flex flex-row justify-between">
+        <img class="h-full w-40 sm:hidden " src="/logo/logo_white.svg" alt="Logo"/>
+        <ul class="hidden sm:flex flex-row items-center text-white uppercase gap-4 justify-between">
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Gallery</li>
+            <li>Contact</li>
+        </ul>
+        <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
+            <Menu class="sm:hidden" width={30} height={30}/>
+            <Search width={30} height={30}/>
+        </div>
+    </div>
+</nav>
+<div class="w-full mx-auto -mt-26 z-0"  style={
+    {
+        backgroundImage: "url('/images/slider_001.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "calc(100vh - 150px)"
+    }
+}>
+</div>
+
 <slot/>
 <p>Hola mund111o</p>
 
@@ -76,3 +102,19 @@ import Mail from "../../public/icons/mail.svg"
         height: 100%;
     }
 </style>
+<script>
+
+    const nav = document.getElementById('main-nav');
+    const header = document.getElementById('main-header');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > header.offsetHeight) {
+            nav.classList.add('fixed', 'inset-0', 'w-full', 'z-10');
+            nav.classList.remove('relative');
+        } else {
+            nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
+            nav.classList.add('relative');
+        }
+    });
+
+</script>
