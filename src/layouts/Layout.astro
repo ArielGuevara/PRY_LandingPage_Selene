@@ -22,8 +22,8 @@ import FooterText from "../components/FooterText.astro";
 </head>
 <body class=" !h-[5000px]">
 <header id="main-header" class="hidden sm:block w-full h-24">
-    <div class="flex gap-8 flex-row justify-between items-center w-[80%] mx-auto h-full">
-        <Logo  width={143} height={50} />
+    <div class="flex gap-8 flex-row justify-between items-center p-2 w-[80%] mx-auto h-full">
+        <Logo class="m-3 p-2" width={143} height={50} />
         <div class="flex flex-row gap-8">
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
@@ -74,8 +74,8 @@ import FooterText from "../components/FooterText.astro";
             <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
-            <Menu class="sm:hidden" width={30} height={30}/>
-            <Search class="mr-6 bg-primary-light p-4 h-[60%] w-[60%]" width={30} height={30}/>
+            <Menu class="sm:hidden" width={40} height={40}/>
+            <Search class=" mr-6 bg-primary-light p-2 h-12 w-12" />
         </div>
     </div>
 </nav>
@@ -92,23 +92,47 @@ import FooterText from "../components/FooterText.astro";
 <slot/>
 
 
-<footer class="mx-auto bg-tertiary text-white h-auto w-full p-4" >
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+<footer class=" bg-tertiary text-white h-auto w-full p-4" >
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
         <div>
             <h3 class="text-xl font-bold">Medico</h3>
             <div class="flex flex-row text-primary-light my-4">
-                <Row/> <FooterText text="Mis servicios" path="MyServices"/>
+                <Row width={20} height={20}/> <FooterText text="Mis servicios" path="MyServices"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
-                <Row/> <FooterText text="Acuerdos de privacidad" path="Privacy"/>
+                <Row width={20} height={20}/> <FooterText text="Acuerdos de privacidad" path="Privacy"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
-                <Row/> <FooterText text="Testimonios" path="Testimonials"/>
+                <Row width={20} height={20}/> <FooterText text="Testimonios" path="Testimonials"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
                 <Row/> <FooterText text="Agentar Cita" path="AgendCite"/>
             </div>
         </div>
+        <div>
+            <h3 class="font-bold text-lg pb-2">Tendencias</h3>
+            <div class="mt-3 space-y-4">
+                <div class="flex gap-3">
+                    <img src="../../public/images/footer_1.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                    <div>
+                        <h4 class="font-semibold">Dental X-rays</h4>
+                        <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
+                        <p class="text-gray-300 text-sm">Solucoines profesionales</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <img src="../../public/images/footer_2.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                    <div>
+                        <h4 class="font-semibold">Chequeos de todas las piezas <dentales></dentales></h4>
+                        <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
+                        <p class="text-gray-300 text-sm">Solucoines profesionales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
     </div>
 </footer>
 </body>
@@ -129,7 +153,7 @@ import FooterText from "../components/FooterText.astro";
 
         if (!nav || !header) {
             console.error('El elemento #main-nav o #main-header no está presente en el DOM.');
-            return; // Sal de la función si no existen
+            return;
         }
 
         window.addEventListener('scroll', () => {
