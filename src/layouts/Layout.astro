@@ -7,6 +7,9 @@ import Logo from "../../public/logo/logo_white.svg"
 import Menu from "../../public/icons/menu.svg"
 import Phone from "../../public/icons/phone.svg"
 import Mail from "../../public/icons/mail.svg"
+import Ancle from "../components/Ancle.astro"
+import Row from "../../public/icons/arrow-right.svg"
+import FooterText from "../components/FooterText.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -60,19 +63,19 @@ import Mail from "../../public/icons/mail.svg"
 <!--    </div>-->
 <!--</nav>-->
 
-<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-white z-10">
-    <div class="bg-primary h-full p-4 flex flex-row justify-between">
+<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-background z-10">
+    <div class="bg-primary h-full p-0 flex flex-row justify-between">
         <img class="h-full w-40 sm:hidden " src="/logo/logo_white.svg" alt="Logo"/>
         <ul class="hidden sm:flex flex-row items-center text-white uppercase gap-4 justify-between">
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Gallery</li>
-            <li>Contact</li>
+            <Ancle path="inicio" text="Inicio"/>
+            <Ancle text="Nosotros" path="Sobre Nosotros"/>
+            <Ancle text="Servicios" path="Servicios"/>
+            <Ancle text="Contact" path="Contact"/>
+            <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
             <Menu class="sm:hidden" width={30} height={30}/>
-            <Search width={30} height={30}/>
+            <Search class="mr-6 bg-primary-light p-4 h-[60%] w-[60%]" width={30} height={30}/>
         </div>
     </div>
 </nav>
@@ -87,10 +90,26 @@ import Mail from "../../public/icons/mail.svg"
 </div>
 
 <slot/>
-<p>Hola mund111o</p>
 
-<footer class="mx-auto bg-tertiary h-auto w-full p-4" >
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto dolorem ducimus, eaque exercitationem facere in inventore minima nostrum, possimus provident quam quia quibusdam similique sint soluta tempore vitae voluptatum.</p>
+
+<footer class="mx-auto bg-tertiary text-white h-auto w-full p-4" >
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div>
+            <h3 class="text-xl font-bold">Medico</h3>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row/> <FooterText text="Mis servicios" path="MyServices"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row/> <FooterText text="Acuerdos de privacidad" path="Privacy"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row/> <FooterText text="Testimonios" path="Testimonials"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row/> <FooterText text="Agentar Cita" path="AgendCite"/>
+            </div>
+        </div>
+    </div>
 </footer>
 </body>
 </html>
