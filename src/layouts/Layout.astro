@@ -6,7 +6,14 @@ import Search from "../../public/icons/search.svg"
 import Logo from "../../public/logo/logo_white.svg"
 import Menu from "../../public/icons/menu.svg"
 import Phone from "../../public/icons/phone.svg"
+import PhoneFill from "../../public/icons/phone_Fill.svg"
 import Mail from "../../public/icons/mail.svg"
+import MailFill from "../../public/icons/mail_fill.svg"
+import Ancle from "../components/Ancle.astro"
+import Row from "../../public/icons/arrow-right.svg"
+import FooterText from "../components/FooterText.astro";
+import MapPin from "../../public/icons/map-pin.svg"
+import FooterAncle from "../components/FooterAncle.astro";
 ---
 <!doctype html>
 <html lang="en">
@@ -17,18 +24,18 @@ import Mail from "../../public/icons/mail.svg"
     <meta name="generator" content={Astro.generator}/>
     <title>Astro Basics</title>
 </head>
-<body class=" !h-[5000px]">
-<header id="main-header" class="hidden sm:block w-full h-24">
-    <div class="flex gap-8 flex-row justify-between items-center w-[80%] mx-auto h-full">
-        <Logo  width={143} height={50} />
+<body class=" !h-[5100px]">
+<header id="main-header" class="hidden sm:block w-full h-24 xl:w-full">
+    <div class="flex gap-8 flex-row justify-between items-center p-2 w-[80%] mx-auto h-full">
+        <Logo class="ml-5 p-2 w-40 h-30"  />
         <div class="flex flex-row gap-8">
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
                     <Phone/>
                 </div>
                 <div>
-                    <p>51 00 0000 0000</p>
-                    <p>51 00 0000 0000</p>
+                    <p>+593 98 722 0564</p>
+                    <p>+593 93 922 5866</p>
                 </div>
             </div>
             <div class="flex flex-row justify-between gap-2">
@@ -36,8 +43,8 @@ import Mail from "../../public/icons/mail.svg"
                     <Mail/>
                 </div>
                 <div>
-                    <p>mail@localhost.xyz</p>
-                    <p>mail@localhost.xyz</p>
+                    <p>wendysele07@gmail.com</p>
+                    <p>wsfloresr@uce.edu.ec</p>
                 </div>
             </div>
             <div class="px-5 py-3 bg-primary text-white rounded-3xl">
@@ -46,33 +53,21 @@ import Mail from "../../public/icons/mail.svg"
         </div>
     </div>
 </header>
-<!--<nav class="flex  bg-primary mx-auto w-[75%] h-20 justify-between items-center flex-row border-r-15 border-l-15 border-b-15 border-background z-10">-->
-<!--   <div class="flex gap-6 h-full">-->
-<!--       <Ancle text="Inicio" path="Inicio"/>-->
-<!--       <Ancle text="Nosotros" path="Sobre Nosotros"/>-->
-<!--       <Ancle text="Servicios" path="Servicios"/>-->
-<!--       <Ancle text="Contact" path="Contact"/>-->
-<!--       <Ancle text="Dentist" path="Dentist"/>-->
-<!--       <Ancle text="Blog" path="Blog"/>-->
-<!--   </div>-->
-<!--    <div class="flex p-3 items-center mr-4 hover:bg-primary-light">-->
-<!--        <Search/>-->
-<!--    </div>-->
-<!--</nav>-->
 
-<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[80%] bg-white z-10">
-    <div class="bg-primary h-full p-4 flex flex-row justify-between">
+
+<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[85%] bg-background z-10">
+    <div class="bg-primary h-full p-0 flex flex-row justify-between">
         <img class="h-full w-40 sm:hidden " src="/logo/logo_white.svg" alt="Logo"/>
         <ul class="hidden sm:flex flex-row items-center text-white uppercase gap-4 justify-between">
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Gallery</li>
-            <li>Contact</li>
+            <Ancle path="inicio" text="Inicio"/>
+            <Ancle text="Nosotros" path="Sobre Nosotros"/>
+            <Ancle text="Servicios" path="Servicios"/>
+            <Ancle text="Contact" path="Contact"/>
+            <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
-            <Menu class="sm:hidden" width={30} height={30}/>
-            <Search width={30} height={30}/>
+            <Menu class="sm:hidden cursor-pointer" width={40} height={40}/>
+            <Search class=" mr-6 bg-primary-light p-2 h-12 w-12" />
         </div>
     </div>
 </nav>
@@ -87,10 +82,85 @@ import Mail from "../../public/icons/mail.svg"
 </div>
 
 <slot/>
-<p>Hola mund111o</p>
 
-<footer class="mx-auto bg-tertiary h-auto w-full p-4" >
-    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto dolorem ducimus, eaque exercitationem facere in inventore minima nostrum, possimus provident quam quia quibusdam similique sint soluta tempore vitae voluptatum.</p>
+
+<footer class=" bg-tertiary text-white h-auto w-full py-20">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div>
+            <h3 class="text-xl font-bold border-b-2 border-primary w-20 hover:w-40 transition-all duration-300 mb-8">Medico</h3>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row width={20} height={20}/> <FooterText text="Mis servicios" path="MyServices"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row width={20} height={20}/> <FooterText text="Acuerdos de privacidad" path="Privacy"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row width={20} height={20}/> <FooterText text="Testimonios" path="Testimonials"/>
+            </div>
+            <div class="flex flex-row text-primary-light my-4">
+                <Row/> <FooterText text="Agentar Cita" path="AgendCite"/>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-30 hover:w-50 transition-all duration-300 mb-8">Tendencias</h3>
+            <div class="mt-3 space-y-4">
+                <div class="flex gap-3">
+                    <img src="../../public/images/footer_1.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                    <div>
+                        <h4 class="font-semibold">Dental X-rays</h4>
+                        <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
+                        <p class="text-gray-300 text-sm">Soluciones profesionales</p>
+                    </div>
+                </div>
+                <div class="flex gap-3">
+                    <img src="../../public/images/footer_2.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                    <div>
+                        <h4 class="font-semibold">Chequeos de todas las piezas dentales</h4>
+                        <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
+                        <p class="text-gray-300 text-sm">Solucoines profesionales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-35 hover:w-55 transition-all duration-300 mb-8">Promociones</h3>
+            <p class="text-gray-300 text-sm my-2">Suscribete y obten desceuentos en limpiezas y blanquementos dentales para el proximo mes</p>
+            <h4 class="my-3 border-b-1">Email</h4>
+            <div class="flex bg-primary items-center justify-center h-12 hover:bg-primary-light cursor-pointer" onsubmit="">
+               <p class="cursor-pointer">Suscribete</p>
+            </div>
+        </div>
+        <div>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-32 hover:w-52 transition-all duration-300 mb-8">Contactame</h3>
+            <div class="flex flex-row items-center gap-2">
+                <MapPin class="h-10 w-8" /> <p class="text-gray-300 text-sm">Seis de Julio de Cuellaje</p>
+            </div>
+           <div class="flex flex-row items-center gap-2">
+               <PhoneFill class="h-10 w-8" /> <p class="text-gray-300 text-sm">+593 98 722 0564</p>
+           </div>
+            <div class="flex flex-row items-center gap-2">
+                <MailFill class="h-10 w-8" /> <p class="text-gray-300 text-sm">wendysele07@gmail.com</p>
+            </div>
+            <div class="flex flex-row gap-2">
+                <FooterAncle icon="../../public/icons/facebook.svg" link="https://www.facebook.com/"/>
+                <FooterAncle icon="../../public/icons/instagram.svg" link="https://www.instagram.com/"/>
+                <FooterAncle icon="../../public/icons/map-pin-pin.svg" link="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7"/>
+                <FooterAncle icon="../../public/icons/youtube.svg" link="https://www.youtube.com/"/>
+            </div>
+        </div>
+    </div>
+    <hr class="mt-20 mb-6 border-gray-500 h-1 "/>
+    <div class="flex justify-between items-center py-4 px-8">
+        <div class="flex flex-row gap-1">
+            ©2025 SeleDental - <p class="text-primary"> UCE</p>
+        </div>
+        <div class="flex flex-row gap-4 px-4">
+            <Ancle path="Home" text="Inicio"/>
+            <Ancle path="Home" text="Sobre Mi"/>
+            <Ancle path="Home" text="Contactos"/>
+        </div>
+    </div>
+
 </footer>
 </body>
 </html>
@@ -110,7 +180,7 @@ import Mail from "../../public/icons/mail.svg"
 
         if (!nav || !header) {
             console.error('El elemento #main-nav o #main-header no está presente en el DOM.');
-            return; // Sal de la función si no existen
+            return;
         }
 
         window.addEventListener('scroll', () => {
