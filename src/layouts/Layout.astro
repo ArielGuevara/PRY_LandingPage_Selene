@@ -19,6 +19,7 @@ import Instagram from "../../public/icons/instagram.svg"
 import MapPinPin from "../../public/icons/map-pin-pin.svg"
 import Youtube from "../../public/icons/youtube.svg"
 import X from "../../public/icons/x.svg"
+import Clock from "../../public/icons/clock.svg"
 import MenuNav from "../components/MenuNav.astro";
 
 ---
@@ -73,25 +74,75 @@ import MenuNav from "../components/MenuNav.astro";
             <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
-            <Menu class="sm:hidden cursor-pointer w-8 h-8" id="main-menu"/>
+            <Menu class="sm:hidden cursor-pointer w-8 h-8" id="main-menu" />
             <Search class=" mr-6 bg-primary cursor-pointer p-2 h-10 w-10" />
         </div>
     </div>
 </nav>
 
-<div id="main-menu-nav" class="flex flex-col gap-5 bg-background h-full w-1/2 fixed z-20 right-0 top-0 p-6">
+<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background h-full w-1/2 fixed z-20 right-0 top-0 p-6 transition-transform duration-300">
     <div class="flex justify-end items-center w-full">
-        <div class="rounded-full bg-tertiary h-10 w-10 p-2">
+        <div id="menu-nav-x" class="rounded-full text-background bg-tertiary h-10 w-10 p-2 cursor-pointer" >
             <X/>
         </div>
     </div>
-    <input type="text" class="text-foreground w-[90%] h-10 p-4 border border-foreground" placeholder="buscar">
+
+    <label for="search" class="sr-only">Buscar</label>
+    <input id="search" type="text" class="text-foreground w-[90%] h-10 p-6 border border-foreground" placeholder="buscar" autocomplete="off"/>
      <div class="flex flex-col gap-0">
-        <MenuNav path="Inicio" text="Inicio"/>
+         <MenuNav path="Inicio" text="Inicio"/>
          <MenuNav path="Inicio" text="Servicios"/>
          <MenuNav path="Inicio" text="Dentista"/>
          <MenuNav path="Inicio" text="Contacto"/>
      </div>
+    <div class="flex flex-col gap-4 text-primary text-3xl pt-4">
+        <div class="flex flex-row gap-1">
+            <PhoneFill class="w-5 h-5" />
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >+593 98 722 0564</a>
+        </div>
+        <div class="flex flex-row gap-1">
+            <Mail class="w-5 h-5"/>
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >wendysele07@gmail.com</a>
+        </div>
+        <div class="flex flex-row gap-1">
+            <Clock class="w-5 h-5"/>
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >Mon-Fri 8:00-19:00</a>
+        </div>
+    </div>
+    <div class="flex flex-col gap-6 my-2">
+        <div class="flex justify-center font-bold text-background p-2 bg-primary hover:bg-background border border-primary hover:text-primary">
+            CITA
+        </div>
+        <div class="flex justify-center font-bold text-primary p-2 bg-background border border-primary hover:bg-primary hover:text-background">
+            CALENDARIO
+        </div>
+    </div>
+    <div class="flex flex-row gap-3 my-2 px-8">
+        <a href="https://www.facebook.com/" target="_blank"
+           class="bg-blue-500 text-background p-2 hover:bg-background border border-blue-500 hover:text-blue-500">
+           <Facebook class="w-5 h-5" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank"
+           class="bg-purple-950 text-background p-2 hover:bg-background border border-purple-950 hover:text-purple-950">
+            <Instagram class="w-5 h-5" />
+        </a>
+        <a href="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7" target="_blank"
+           class="bg-cyan-950 text-background p-2 hover:bg-background border border-cyan-950 hover:text-cyan-950">
+            <MapPinPin class="w-5 h-5" />
+        </a>
+        <a href="https://www.youtube.com/" target="_blank"
+           class="bg-red-600 text-background p-2 hover:bg-background border border-red-600 hover:text-red-600">
+            <Youtube class="w-5 h-5" />
+        </a>
+    </div>
+
+
 </div>
 
 <slot/>
@@ -196,5 +247,9 @@ import MenuNav from "../components/MenuNav.astro";
         height: 100%;
     }
 </style>
-<script src="../lib/types/layout.ts"></script>
+<!--<script src="../lib/types/layout.ts"></script>-->
+<script>
+    import { setupMenuToggle } from '../lib/types/layout.ts';
 
+    document.addEventListener('DOMContentLoaded', setupMenuToggle);
+</script>

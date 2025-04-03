@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.getElementById('main-nav');
     const header = document.getElementById('main-header');
-    const menu = document.getElementById('main-menu');
 
     if (!nav || !header) {
         console.error('El elemento #main-nav o #main-header no está presente en el DOM.');
@@ -19,4 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+export function setupMenuToggle() {
+    const menu = document.getElementById('main-menu');
+    // const nav_x = document.getElementById('main-nav-x');
+    const container_nav = document.getElementById('main-menu-nav');
+
+    if (!menu || !container_nav) return;
+    container_nav.classList.add('translate-x-full', 'hidden', 'transition-transform', 'duration-300');
+
+    menu.addEventListener('click', () => {
+        container_nav.classList.remove('hidden', 'translate-x-full');
+        container_nav.classList.add('translate-x-0');
+    })
+}
 
