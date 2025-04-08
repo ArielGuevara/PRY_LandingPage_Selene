@@ -249,7 +249,9 @@ import MenuNav from "../components/MenuNav.astro";
 </style>
 <!--<script src="../lib/types/layout.ts"></script>-->
 <script>
-    import { setupMenuToggle } from '../lib/types/layout.ts';
+    import { setupMenuToggle} from '../lib/types/layout.ts';
+    import { closeMenu } from '../lib/types/layout.ts';
 
     document.addEventListener('DOMContentLoaded', setupMenuToggle);
+    document.addEventListener('DOMContentLoaded', closeMenu);
 </script>

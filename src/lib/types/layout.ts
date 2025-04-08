@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 export function setupMenuToggle() {
     const menu = document.getElementById('main-menu');
-    // const nav_x = document.getElementById('main-nav-x');
     const container_nav = document.getElementById('main-menu-nav');
 
     if (!menu || !container_nav) return;
@@ -31,5 +30,16 @@ export function setupMenuToggle() {
         container_nav.classList.remove('hidden', 'translate-x-full');
         container_nav.classList.add('translate-x-0');
     })
+}
+
+export function closeMenu() {
+    const nav_x = document.getElementById('menu-nav-x');
+    const container_nav = document.getElementById('main-menu-nav');
+    if (!nav_x || !container_nav)  return;
+    nav_x.addEventListener('click', () => {
+        container_nav.classList.remove('translate-x-0');
+        container_nav.classList.add('translate-x-full', 'hidden');
+    })
+
 }
 
