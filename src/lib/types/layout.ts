@@ -19,15 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+
 export function setupMenuToggle() {
     const menu = document.getElementById('main-menu');
     const container_nav = document.getElementById('main-menu-nav');
 
     if (!menu || !container_nav) return;
-    container_nav.classList.add('translate-x-full', 'hidden', 'transition-transform', 'duration-300');
+    container_nav.classList.add('hidden', 'translate-x-full');
 
     menu.addEventListener('click', () => {
-        container_nav.classList.remove('hidden', 'translate-x-full');
+        container_nav.classList.remove('hidden');
+        void container_nav.offsetWidth;
+        container_nav.classList.remove('translate-x-full');
         container_nav.classList.add('translate-x-0');
     })
 }
@@ -38,7 +41,13 @@ export function closeMenu() {
     if (!nav_x || !container_nav)  return;
     nav_x.addEventListener('click', () => {
         container_nav.classList.remove('translate-x-0');
-        container_nav.classList.add('translate-x-full', 'hidden');
+        container_nav.classList.add('translate-x-full');
+
+        container_nav.addEventListener('transitionend', () => {
+            if (container_nav.classList.contains('translate-x-full')) {
+                container_nav.classList.add('hidden');
+            }
+        }, { once: true });
     })
 
 }

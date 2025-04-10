@@ -74,13 +74,13 @@ import MenuNav from "../components/MenuNav.astro";
             <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
-            <Menu class="sm:hidden cursor-pointer w-8 h-8" id="main-menu" />
+            <Menu class="sm:hidden cursor-pointer animate-pulse w-8 h-8" id="main-menu" />
             <Search class=" mr-6 bg-primary cursor-pointer p-2 h-10 w-10" />
         </div>
     </div>
 </nav>
 
-<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background h-full w-1/2 fixed z-20 right-0 top-0 p-6 transition-transform duration-300">
+<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background h-full w-1/2 fixed z-20 right-0 top-0 p-6 transform transition-transform duration-500 ease-in-out translate-x-full">
     <div class="flex justify-end items-center w-full">
         <div id="menu-nav-x" class="rounded-full text-background bg-tertiary h-10 w-10 p-2 cursor-pointer" >
             <X/>
@@ -188,7 +188,7 @@ import MenuNav from "../components/MenuNav.astro";
         </div>
         <div>
             <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-35 hover:w-[65%] transition-all duration-300 mb-8">Promociones</h3>
-            <p class="text-gray-300 text-sm my-2">Suscribete y obten desceuentos en limpiezas y blanquementos dentales para el proximo mes</p>
+            <p class="text-gray-300 text-sm my-2">Suscribete y obten descuentos en limpiezas y blanquemientos dentales para el proximo mes</p>
             <h4 class="my-4 border-b-1 p-2">Email</h4>
             <div class="flex bg-primary items-center justify-center h-12 hover:bg-primary-light cursor-pointer" onsubmit="">
                <p class="cursor-pointer">Suscribete</p>
