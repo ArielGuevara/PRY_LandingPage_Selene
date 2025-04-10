@@ -1,0 +1,12 @@
+---
+interface Props {
+    link: string    // URL de la red social,
+    color?: string,
+}
+const { link, color } = Astro.props;
+---
+<a href={link} class="w-10 h-10 bg-primary text-white flex items-center justify-center hover:text-primary border-primary border-2 "
+   target="_blank"
+   style={color !== "currentColor" ? { color } : {}}>
+    <slot />
+</a>

@@ -13,7 +13,17 @@ import Ancle from "../components/Ancle.astro"
 import Row from "../../public/icons/arrow-right.svg"
 import FooterText from "../components/FooterText.astro";
 import MapPin from "../../public/icons/map-pin.svg"
-import FooterAncle from "../components/FooterAncle.astro";
+import SvgAncleFooter from "../components/SvgAncleFooter.astro";
+import Facebook from "../../public/icons/facebook.svg";
+import Instagram from "../../public/icons/instagram.svg"
+import MapPinPin from "../../public/icons/map-pin-pin.svg"
+import Youtube from "../../public/icons/youtube.svg"
+import X from "../../public/icons/x.svg"
+import Clock from "../../public/icons/clock.svg"
+import MenuNav from "../components/MenuNav.astro";
+import HeaderAncle from "../components/HeaderAncle.astro";
+import SvgAncleHeader from "../components/SvgAncleHeader.astro";
+
 ---
 <!doctype html>
 <html lang="en">
@@ -22,25 +32,30 @@ import FooterAncle from "../components/FooterAncle.astro";
     <meta name="viewport" content="width=device-width"/>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
     <meta name="generator" content={Astro.generator}/>
-    <title>Astro Basics</title>
+    <title>Sele Dental</title>
 </head>
-<body class=" !h-[5100px]">
+<body class="relative">
 <header id="main-header" class="hidden sm:block w-full h-24 xl:w-full">
     <div class="flex gap-8 flex-row justify-between items-center p-2 w-[80%] mx-auto h-full">
         <Logo class="ml-5 p-2 w-40 h-30"  />
         <div class="flex flex-row gap-8">
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
-                    <Phone/>
+                    <SvgAncleHeader color="white" link="https://wa.me/5930987220564">
+                        <Phone/>
+                    </SvgAncleHeader>
                 </div>
-                <div>
-                    <p>+593 98 722 0564</p>
-                    <p>+593 93 922 5866</p>
+                <div class="flex flex-col">
+                    <HeaderAncle path="https://wa.me/5930987220564" text="+593 98 722 0564" />
+                    <HeaderAncle path="https://wa.me/5930939225866" text="+593 93 922 5866"/>
                 </div>
             </div>
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
-                    <Mail/>
+                    <SvgAncleHeader color="white" link="#">
+                        <Mail/>
+                    </SvgAncleHeader>
+
                 </div>
                 <div>
                     <p>wendysele07@gmail.com</p>
@@ -55,9 +70,9 @@ import FooterAncle from "../components/FooterAncle.astro";
 </header>
 
 
-<nav id="main-nav" class="relative pb-4 h-26 px-4 mx-auto sm:w-[85%] bg-background z-10">
+<nav id="main-nav" class=" pb-4 h-26 px-4 mx-auto w-[94%] bg-background z-10">
     <div class="bg-primary h-full p-0 flex flex-row justify-between">
-        <img class="h-full w-40 sm:hidden " src="/logo/logo_white.svg" alt="Logo"/>
+        <img class="h-full w-40 sm:hidden p-2" src="/logo/logo_white.svg" alt="Logo"/>
         <ul class="hidden sm:flex flex-row items-center text-white uppercase gap-4 justify-between">
             <Ancle path="inicio" text="Inicio"/>
             <Ancle text="Nosotros" path="Sobre Nosotros"/>
@@ -66,28 +81,84 @@ import FooterAncle from "../components/FooterAncle.astro";
             <Ancle text="Blog" path="Blog"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
-            <Menu class="sm:hidden cursor-pointer" width={40} height={40}/>
-            <Search class=" mr-6 bg-primary-light p-2 h-12 w-12" />
+            <Menu class="sm:hidden cursor-pointer animate-pulse w-8 h-8" id="main-menu" />
+            <Search class=" mr-6 bg-primary cursor-pointer p-2 h-10 w-10" />
         </div>
     </div>
 </nav>
-<div class="w-full mx-auto -mt-26 z-0"  style={
-    {
-        backgroundImage: "url('/images/slider_001.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "calc(100vh - 150px)"
-    }
-}>
+
+<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background m-0 h-full w-1/2 fixed z-20 right-0 top-0 p-6 transform transition-transform duration-500 ease-in-out translate-x-full">
+    <div class="flex justify-end items-center w-full">
+        <div id="menu-nav-x" class="rounded-full text-background bg-tertiary h-10 w-10 p-2 cursor-pointer" >
+            <X/>
+        </div>
+    </div>
+
+    <label for="search" class="sr-only">Buscar</label>
+    <input id="search" type="text" class="text-foreground w-[90%] h-10 p-6 border border-foreground" placeholder="buscar" autocomplete="off"/>
+     <div class="flex flex-col gap-0">
+         <MenuNav path="Inicio" text="Inicio"/>
+         <MenuNav path="Inicio" text="Servicios"/>
+         <MenuNav path="Inicio" text="Dentista"/>
+         <MenuNav path="Inicio" text="Contacto"/>
+     </div>
+    <div class="flex flex-col gap-4 text-primary text-3xl pt-4">
+        <div class="flex flex-row gap-1">
+            <PhoneFill class="w-5 h-5" />
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >+593 98 722 0564</a>
+        </div>
+        <div class="flex flex-row gap-1">
+            <Mail class="w-5 h-5"/>
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >wendysele07@gmail.com</a>
+        </div>
+        <div class="flex flex-row gap-1">
+            <Clock class="w-5 h-5"/>
+            <a href="#" target="_blank"
+               class="text-xs text-foreground hover:text-primary"
+            >Mon-Fri 8:00-19:00</a>
+        </div>
+    </div>
+    <div class="flex flex-col gap-6 my-2">
+        <div class="flex justify-center font-bold text-background p-2 bg-primary hover:bg-background border border-primary hover:text-primary">
+            CITA
+        </div>
+        <div class="flex justify-center font-bold text-primary p-2 bg-background border border-primary hover:bg-primary hover:text-background">
+            CALENDARIO
+        </div>
+    </div>
+    <div class="flex flex-row text-white gap-3 my-2 px-8">
+        <a href="https://www.facebook.com/" target="_blank"
+           class="bg-blue-500 text-blue-100 p-2 hover:bg-background border border-blue-500 hover:text-blue-500">
+           <Facebook class="w-5 h-5" />
+        </a>
+        <a href="https://www.instagram.com/" target="_blank"
+           class="bg-purple-950 text-blue-100 p-2 hover:bg-background border border-purple-950 hover:text-purple-950">
+            <Instagram class="w-5 h-5" />
+        </a>
+        <a href="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7" target="_blank"
+           class="bg-cyan-950 text-blue-100 p-2 hover:bg-background border border-cyan-950 hover:text-cyan-950">
+            <MapPinPin class="w-5 h-5" />
+        </a>
+        <a href="https://www.youtube.com/" target="_blank"
+           class="bg-red-600 text-blue-100 p-2 hover:bg-background border border-red-600 hover:text-red-600">
+            <Youtube class="w-5 h-5" />
+        </a>
+    </div>
+
+
 </div>
 
 <slot/>
 
 
-<footer class=" bg-tertiary text-white h-auto w-full py-20">
+<footer class=" bg-tertiary text-white h-auto w-full py-20 px-8">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
         <div>
-            <h3 class="text-xl font-bold border-b-2 border-primary w-20 hover:w-40 transition-all duration-300 mb-8">Medico</h3>
+            <h3 class="text-xl font-bold border-b-2 border-primary w-20 hover:w-[65%] transition-all duration-300 mb-8">Medico</h3>
             <div class="flex flex-row text-primary-light my-4">
                 <Row width={20} height={20}/> <FooterText text="Mis servicios" path="MyServices"/>
             </div>
@@ -102,7 +173,7 @@ import FooterAncle from "../components/FooterAncle.astro";
             </div>
         </div>
         <div>
-            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-30 hover:w-50 transition-all duration-300 mb-8">Tendencias</h3>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-30 hover:w-[65%] transition-all duration-300 mb-8">Tendencias</h3>
             <div class="mt-3 space-y-4">
                 <div class="flex gap-3">
                     <img src="../../public/images/footer_1.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
@@ -123,15 +194,15 @@ import FooterAncle from "../components/FooterAncle.astro";
             </div>
         </div>
         <div>
-            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-35 hover:w-55 transition-all duration-300 mb-8">Promociones</h3>
-            <p class="text-gray-300 text-sm my-2">Suscribete y obten desceuentos en limpiezas y blanquementos dentales para el proximo mes</p>
-            <h4 class="my-3 border-b-1">Email</h4>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-35 hover:w-[65%] transition-all duration-300 mb-8">Promociones</h3>
+            <p class="text-gray-300 text-sm my-2">Suscribete y obten descuentos en limpiezas y blanquemientos dentales para el proximo mes</p>
+            <h4 class="my-4 border-b-1 p-2">Email</h4>
             <div class="flex bg-primary items-center justify-center h-12 hover:bg-primary-light cursor-pointer" onsubmit="">
                <p class="cursor-pointer">Suscribete</p>
             </div>
         </div>
         <div>
-            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-32 hover:w-52 transition-all duration-300 mb-8">Contactame</h3>
+            <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-32 hover:w-[65%] transition-all duration-300 mb-6">Contactame</h3>
             <div class="flex flex-row items-center gap-2">
                 <MapPin class="h-10 w-8" /> <p class="text-gray-300 text-sm">Seis de Julio de Cuellaje</p>
             </div>
@@ -142,22 +213,32 @@ import FooterAncle from "../components/FooterAncle.astro";
                 <MailFill class="h-10 w-8" /> <p class="text-gray-300 text-sm">wendysele07@gmail.com</p>
             </div>
             <div class="flex flex-row gap-2">
-                <FooterAncle icon="../../public/icons/facebook.svg" link="https://www.facebook.com/"/>
-                <FooterAncle icon="../../public/icons/instagram.svg" link="https://www.instagram.com/"/>
-                <FooterAncle icon="../../public/icons/map-pin-pin.svg" link="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7"/>
-                <FooterAncle icon="../../public/icons/youtube.svg" link="https://www.youtube.com/"/>
+                <SvgAncleFooter color="white" link="https://www.facebook.com/">
+                    <Facebook/>
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://www.instagram.com/">
+                    <Instagram/>
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7">
+                    <MapPinPin/>
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://www.youtube.com/">
+                    <Youtube/>
+                </SvgAncleFooter>
+
+
             </div>
         </div>
     </div>
     <hr class="mt-20 mb-6 border-gray-500 h-1 "/>
-    <div class="flex justify-between items-center py-4 px-8">
+    <div class="flex justify-between items-center py-4 px-8 sm:flex-col">
         <div class="flex flex-row gap-1">
-            ©2025 SeleDental - <p class="text-primary"> UCE</p>
+            © 2025 SeleDental - <p class="text-primary"> UCE</p>
         </div>
         <div class="flex flex-row gap-4 px-4">
-            <Ancle path="Home" text="Inicio"/>
-            <Ancle path="Home" text="Sobre Mi"/>
-            <Ancle path="Home" text="Contactos"/>
+            <FooterText path="Home"  text="Inicio"/>
+            <FooterText path="Home" text="Sobre Mi"/>
+            <FooterText path="Home" text="Contactos"/>
         </div>
     </div>
 
@@ -173,24 +254,11 @@ import FooterAncle from "../components/FooterAncle.astro";
         height: 100%;
     }
 </style>
+<!--<script src="../lib/types/layout.ts"></script>-->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.getElementById('main-nav');
-        const header = document.getElementById('main-header');
+    import { setupMenuToggle} from '../lib/types/layout.ts';
+    import { closeMenu } from '../lib/types/layout.ts';
 
-        if (!nav || !header) {
-            console.error('El elemento #main-nav o #main-header no está presente en el DOM.');
-            return;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > header.offsetHeight) {
-                nav.classList.add('fixed', 'inset-0', 'w-full', 'z-10');
-                nav.classList.remove('relative');
-            } else {
-                nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
-                nav.classList.add('relative');
-            }
-        });
-    });
+    document.addEventListener('DOMContentLoaded', setupMenuToggle);
+    document.addEventListener('DOMContentLoaded', closeMenu);
 </script>
