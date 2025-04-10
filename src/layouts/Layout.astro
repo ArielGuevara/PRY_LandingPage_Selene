@@ -13,7 +13,7 @@ import Ancle from "../components/Ancle.astro"
 import Row from "../../public/icons/arrow-right.svg"
 import FooterText from "../components/FooterText.astro";
 import MapPin from "../../public/icons/map-pin.svg"
-import FooterAncle from "../components/FooterAncle.astro";
+import SvgAncleFooter from "../components/SvgAncleFooter.astro";
 import Facebook from "../../public/icons/facebook.svg";
 import Instagram from "../../public/icons/instagram.svg"
 import MapPinPin from "../../public/icons/map-pin-pin.svg"
@@ -21,6 +21,8 @@ import Youtube from "../../public/icons/youtube.svg"
 import X from "../../public/icons/x.svg"
 import Clock from "../../public/icons/clock.svg"
 import MenuNav from "../components/MenuNav.astro";
+import HeaderAncle from "../components/HeaderAncle.astro";
+import SvgAncleHeader from "../components/SvgAncleHeader.astro";
 
 ---
 <!doctype html>
@@ -39,16 +41,21 @@ import MenuNav from "../components/MenuNav.astro";
         <div class="flex flex-row gap-8">
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
-                    <Phone/>
+                    <SvgAncleHeader color="white" link="https://wa.me/5930987220564">
+                        <Phone/>
+                    </SvgAncleHeader>
                 </div>
-                <div>
-                    <p>+593 98 722 0564</p>
-                    <p>+593 93 922 5866</p>
+                <div class="flex flex-col">
+                    <HeaderAncle path="https://wa.me/5930987220564" text="+593 98 722 0564" />
+                    <HeaderAncle path="https://wa.me/5930939225866" text="+593 93 922 5866"/>
                 </div>
             </div>
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
-                    <Mail/>
+                    <SvgAncleHeader color="white" link="#">
+                        <Mail/>
+                    </SvgAncleHeader>
+
                 </div>
                 <div>
                     <p>wendysele07@gmail.com</p>
@@ -80,7 +87,7 @@ import MenuNav from "../components/MenuNav.astro";
     </div>
 </nav>
 
-<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background h-full w-1/2 fixed z-20 right-0 top-0 p-6 transform transition-transform duration-500 ease-in-out translate-x-full">
+<div id="main-menu-nav" class=" flex flex-col gap-5 bg-background m-0 h-full w-1/2 fixed z-20 right-0 top-0 p-6 transform transition-transform duration-500 ease-in-out translate-x-full">
     <div class="flex justify-end items-center w-full">
         <div id="menu-nav-x" class="rounded-full text-background bg-tertiary h-10 w-10 p-2 cursor-pointer" >
             <X/>
@@ -206,18 +213,18 @@ import MenuNav from "../components/MenuNav.astro";
                 <MailFill class="h-10 w-8" /> <p class="text-gray-300 text-sm">wendysele07@gmail.com</p>
             </div>
             <div class="flex flex-row gap-2">
-                <FooterAncle color="white" link="https://www.facebook.com/">
+                <SvgAncleFooter color="white" link="https://www.facebook.com/">
                     <Facebook/>
-                </FooterAncle>
-                <FooterAncle color="white" link="https://www.instagram.com/">
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://www.instagram.com/">
                     <Instagram/>
-                </FooterAncle>
-                <FooterAncle color="white" link="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7">
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://maps.app.goo.gl/RPgafNSsMhcKqNGe7">
                     <MapPinPin/>
-                </FooterAncle>
-                <FooterAncle color="white" link="https://www.youtube.com/">
+                </SvgAncleFooter>
+                <SvgAncleFooter color="white" link="https://www.youtube.com/">
                     <Youtube/>
-                </FooterAncle>
+                </SvgAncleFooter>
 
 
             </div>

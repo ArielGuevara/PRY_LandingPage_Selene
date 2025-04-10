@@ -1,0 +1,8 @@
+---
+interface Props {
+    text: string,
+    path: string
+}
+const {text, path} = Astro.props
+---
+<a href={`${path}`} target="_blank" class="text-foreground hover:text-primary-light">{text}</a>
