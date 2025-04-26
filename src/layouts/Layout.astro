@@ -3,7 +3,7 @@ import "../styles/global.css";
 import '@fontsource/poppins';
 // import Ancle from "../components/Ancle.astro";
 import Search from "../../public/icons/search.svg"
-import Logo from "../../public/logo/logo_white.svg"
+import Logo from "../../public/logo/SeleDental_logo.svg"
 import Menu from "../../public/icons/menu.svg"
 import Phone from "../../public/icons/phone.svg"
 import PhoneFill from "../../public/icons/phone_Fill.svg"
@@ -36,8 +36,8 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
 </head>
 <body class="relative">
 <header id="main-header" class="hidden sm:block w-full h-24 xl:w-full">
-    <div class="flex gap-8 flex-row justify-between items-center p-2 w-[80%] mx-auto h-full">
-        <Logo class="ml-5 p-2 w-40 h-30"  />
+    <div class="flex gap-8 flex-row justify-between text-foreground items-center p-2 w-[80%] mx-auto h-full">
+        <a href="#"><Logo class="ml-5 p-2 w-40 h-30"  /></a>
         <div class="flex flex-row gap-8">
             <div class="flex flex-row justify-between gap-2">
                 <div class="rounded-full bg-primary p-3 text-white">
@@ -62,9 +62,9 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
                     <p>wsfloresr@uce.edu.ec</p>
                 </div>
             </div>
-            <div class="px-5 py-3 bg-primary text-white rounded-3xl">
+            <a href="#" class="flex px-5 py-3 bg-primary justify-center items-center text-white rounded-3xl hover:bg-primary-light">
                 APPOINTMENT
-            </div>
+            </a>
         </div>
     </div>
 </header>
@@ -180,17 +180,17 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
         <div>
             <h3 class="font-bold text-lg pb-2 border-b-2 border-primary w-30 hover:w-[65%] transition-all duration-300 mb-8">Tendencias</h3>
             <div class="mt-3 space-y-4">
-                <div class="flex gap-3">
+                <div class="flex gap-3 flex-col sm:flex-row">
                     <!--version main-->
-                    <img src="/images/footer_1.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                    <img src="/images/footer_1.jpg" class="w-25 h-auto object-contain" alt="Dental X-rays"/>
                     <div>
                         <h4 class="font-semibold">Dental X-rays</h4>
                         <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
                         <p class="text-gray-300 text-sm">Soluciones profesionales</p>
                     </div>
                 </div>
-                <div class="flex gap-3">
-                    <img src="/images/footer_2.jpg" class="h-18 w-auto" alt="Dental X-rays"/>
+                <div class="flex gap-3 flex-col sm:flex-row">
+                    <img src="/images/footer_2.jpg" class="w-25 h-auto object-contain" alt="Dental X-rays"/>
                     <div>
                         <h4 class="font-semibold">Chequeos de todas las piezas dentales</h4>
                         <p class="text-gray-300 text-sm">Soluciones rapidas y economicas</p>
@@ -244,7 +244,7 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
     <hr class="mt-20 mb-6 border-gray-500 h-1 "/>
     <div class="flex justify-center items-center py-4 px-8 flex-col gap-5 md:flex-row">
         <div class="flex flex-row gap-1">
-            © 2025 SeleDental -  <p class="text-primary"> UCE</p>
+            © 2025 SeleDental -  <a href="https://www.uce.edu.ec/web/fod" class="text-primary hover:text-primary-light"> UCE</a>
         </div>
         <div class="flex flex-row gap-4 px-4">
             <FooterText path="Home"  text="Inicio"/>
