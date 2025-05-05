@@ -7,13 +7,55 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-    <div class="w-full mx-auto -mt-26 z-0"  style={
-        {
-            backgroundImage: "url('/images/slider_001.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "calc(100vh - 150px)"
-        }
-    }>
-    </div>
+    <section class="w-full z-[-1] -mt-26 mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg slider" id="slider">
+        <figure class="relative w-full h-full aspect-video slider-childs">
+            <img src="/images/slider_001.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />
+            <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">
+                <h2 class="text-3">
+                    Imagen 1
+                </h2>
+                <p>
+                    hola mundo
+                </p>
+            </div>
+        </figure>
+        <figure class="relative w-full h-full aspect-video slider-childs">
+            <img src="/images/slider_002.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />
+            <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">
+                <h2 class="text-3">
+                    Imagen 2
+                </h2>
+                <p>
+                    hola mundo
+                </p>
+            </div>
+        </figure>
+        <figure class="relative w-full h-full aspect-video slider-childs">
+            <img src="/images/footer_1.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />
+            <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">
+                <h2 class="text-3">
+                    Imagen 3
+                </h2>
+                <p>
+                    hola mundo
+                </p>
+            </div>
+        </figure>
+
+        <button class="slider-prev bg-white rounded-full ml-4 " data-button="prev">
+            <img src="../../public/icons/chevron-left.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>
+        </button>
+        <button class="slider-next bg-white rounded-full mr-4 " data-button="next">
+            <img src="../../public/icons/chevron-right.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>
+        </button>
+    </section>
+    <!--<div class="w-full mx-auto -mt-26 z-0"  style={-->
+    <!--    {-->
+    <!--        backgroundImage: "url('/images/slider_001.jpg')",-->
+    <!--        backgroundSize: "cover",-->
+    <!--        backgroundPosition: "center",-->
+    <!--        height: "calc(100vh - 150px)"-->
+    <!--    }-->
+    <!--}>-->
+    <!--</div>-->
 </Layout>

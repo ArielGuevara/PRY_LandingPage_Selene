@@ -7,7 +7,7 @@
     --primary: #9d55fc;
     --secondary: #29ffd0;
     --tertiary: #203646;
-    --primary-light: #b77fff;
+        --primary-light: #b77fff;
 
     /*--bg-light: #F4FDE7;*/
 }
@@ -27,6 +27,30 @@
     :root {
         --background: #0a0a0a;
         --foreground: #ededed;
+    }
+}
+
+@layer components {
+    .slider{
+        @apply grid;
+        grid-template-areas: "slide";
+    }
+    .slider-childs{
+        @apply before:absolute before:inset-0 before:bg-gradient-to-b from-transparent to-black z-10;
+        grid-area: slide;
+    }
+
+    [data-active]{
+        order: 1;
+        transition: .6s clip-path;
+    }
+    .slider-prev{
+        grid-area: slide;
+        @apply z-[100] self-center justify-self-start;
+    }
+    .slider-next{
+        grid-area: slide;
+        @apply z-[100] self-center justify-self-end;
     }
 }
 

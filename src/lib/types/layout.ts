@@ -61,3 +61,10 @@ export function closeMenu() {
 
 }
 
+const slider = document.querySelector("#slider");
+const childsSlider = slider ? [...slider.querySelectorAll("figure")] : [];
+
+childsSlider.forEach(function(child, index){
+    child.dataset.idSlider = index.toString();
+})
+
