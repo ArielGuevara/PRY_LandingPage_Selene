@@ -5,9 +5,10 @@
     --foreground: #171717;
 
     --primary: #9d55fc;
+    --primary-light: #b77fff;
     --secondary: #29ffd0;
     --tertiary: #203646;
-        --primary-light: #b77fff;
+    --bgCard: #f7f7f7;
 
     /*--bg-light: #F4FDE7;*/
 }
@@ -20,6 +21,7 @@
     --color-secondary: var(--secondary);
     --color-tertiary: var(--tertiary);
     --color-primary-light: var(--primary-light);
+    --color-card: var(--bgCard);
     /*--color-light: var(--bg-light);*/
 }
 
@@ -59,4 +61,19 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: "Poppins", sans-serif;
+}
+
+.opaque-bg {
+    position: relative; /* Necesario para el ::before */
+    isolation: isolate; /* Contiene el z-index */
+}
+
+.opaque-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--color-secondary);
+    border-radius: inherit;
+    opacity: 40%;
+    z-index: -1;
 }
