@@ -1,19 +1,105 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Estethoscope from '../../public/icons/stethoscope.svg'
+import Calendar from '../../public/icons/calendar-week.svg'
+import CalendarCheck from '../../public/icons/calendar-check.svg'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    <div class="w-full mx-auto -mt-26 z-0"  style={
-        {
-            backgroundImage: "url('/images/slider_001.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            height: "calc(100vh - 150px)"
-        }
-    }>
+    <!--<section class="w-full -mt-26 mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg slider" id="slider">-->
+    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--        <img src="/images/slider_001.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
+    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
+    <!--            <h2 class="text-3">-->
+    <!--                Imagen 1-->
+    <!--            </h2>-->
+    <!--            <p>-->
+    <!--                hola mundo-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </figure>-->
+    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--        <img src="/images/slider_002.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
+    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
+    <!--            <h2 class="text-3">-->
+    <!--                Imagen 2-->
+    <!--            </h2>-->
+    <!--            <p>-->
+    <!--                hola mundo-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </figure>-->
+    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--        <img src="/images/footer_1.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
+    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
+    <!--            <h2 class="text-3">-->
+    <!--                Imagen 3-->
+    <!--            </h2>-->
+    <!--            <p>-->
+    <!--                hola mundo-->
+    <!--            </p>-->
+    <!--        </div>-->
+    <!--    </figure>-->
+
+    <div class="py-28 flex flex-row justify-center items-center gap-8">
+        <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
+            <div class="bg-primary rounded-full p-4">
+                <Estethoscope/>
+            </div>
+            <div class="text-center text-sm mt-4 text-black">
+                lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+            </div>
+        </div>
+        <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
+            <div class="bg-primary rounded-full p-4">
+                <Calendar/>
+            </div>
+            <div class="text-center text-sm mt-4 text-black">
+                lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+            </div>
+        </div>
+        <div>
+            <!--<div class="opaque-bg relative rounded-full p-4 bg-primary  hover:scale-110 transition-transform duration-300 ">-->
+            <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
+                <div class="bg-primary rounded-full p-4">
+                    <CalendarCheck/>
+                </div>
+                <div class="text-center text-sm mt-4 text-black">
+                    lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+                </div>
+            </div>
+        </div>
     </div>
+    <div class="bg-primary block p-8">
+        <div class="flex justify-center items-center gap-4 sm:flex-row flex-col">
+            <img class="w-180 h-auto"  src="../../public/images/dentalCare.png" alt="denatalCare">
+            <div class="text-white p-10">
+                <h2 class="text-4xl font-extrabold">Cuidado dental completo</h2>
+                <p class="">En SeleDental, tu sonrisa es nuestra prioridad. Ofrecemos un cuidado dental completo y personalizado para toda la familia, con tratamientos de alta calidad y tecnología avanzada. Nuestro equipo de especialistas está comprometido con tu salud bucal, desde la prevención hasta soluciones estéticas y funcionales.</p>
+            </div>
+        </div>
+    </div>
+
+    <!--    <button class="slider-prev bg-white rounded-full ml-4 " data-button="prev">-->
+    <!--        <img src="../../public/icons/chevron-left.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>-->
+    <!--    </button>-->
+    <!--    <button class="slider-next bg-white rounded-full mr-4 " data-button="next">-->
+    <!--        <img src="../../public/icons/chevron-right.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>-->
+    <!--    </button>-->
+    <!--</section>-->
+
+
+    <!--<div class="w-full mx-auto -mt-26 z-0"  style={-->
+    <!--    {-->
+    <!--        backgroundImage: "url('/images/slider_001.jpg')",-->
+    <!--        backgroundSize: "cover",-->
+    <!--        backgroundPosition: "center",-->
+    <!--        height: "calc(100vh - 150px)"-->
+    <!--    }-->
+    <!--}>-->
+    <!--</div>-->
 </Layout>

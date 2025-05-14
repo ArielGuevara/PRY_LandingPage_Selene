@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > header.offsetHeight) {
-            nav.classList.add('fixed', 'inset-0', 'w-[94%]', 'z-10');
+            nav.classList.add('fixed', 'inset-0', 'w-[94%]');
             nav.classList.remove('relative');
         } else {
-            nav.classList.remove('fixed', 'inset-0', 'w-full', 'z-10');
-            nav.classList.add('relative');
+            nav.classList.remove('fixed', 'w-full');
+            nav.classList.add('relative', 'z-20');
         }
     });
 
@@ -58,6 +58,55 @@ export function closeMenu() {
             }
         }, { once: true });
     })
-
 }
 
+
+// const slider = document.querySelector<HTMLElement>("#slider");
+// if (!slider) {
+//     console.error("El elemento #slider no está presente en el DOM.");
+//     throw new Error("El elemento #slider no está presente en el DOM.");
+// }
+// const childsSlider = [...slider.querySelectorAll<HTMLElement>("figure")];
+// const nextButton = document.querySelector<HTMLElement>("[data-button='next']");
+// const prevButton = document.querySelector<HTMLElement>("[data-button='prev']");
+// const lengthImages = childsSlider.length;
+//
+// // Asignar índices a los elementos
+// childsSlider.forEach((child, index) => {
+//     child.dataset.idSlider = index.toString();
+// });
+//
+// // Función para obtener la imagen actual con tipado correcto
+// function getCurrentImage(){
+//     return slider?.querySelector("[data-active]");
+// }
+//
+// nextButton?.addEventListener("click", () => {
+//     const currentImage = getCurrentImage();
+//     if (!currentImage){
+//         console.log("No hay imagen activa");
+//         return;
+//     }
+//
+//     // Convertir a número (parseInt o el operador +)
+//     let currentActiveIndex = parseInt(currentImage.dataset.idSlider || "0");
+//     currentActiveIndex++;
+//
+//     if (currentActiveIndex >= lengthImages) {
+//         currentActiveIndex = 0;
+//     }
+//
+//     const newActiveElement = childsSlider[currentActiveIndex];
+//     removeActiveElement();
+//     addNewActiveElement(newActiveElement);
+// });
+//
+// // Funciones auxiliares (ya estaban correctas)
+// function removeActiveElement(): void {
+//     const currentImage = getCurrentImage();
+//     currentImage?.removeAttribute("data-active");
+// }
+//
+// function addNewActiveElement(element: HTMLElement): void {
+//     element.setAttribute("data-active", "");
+// }
