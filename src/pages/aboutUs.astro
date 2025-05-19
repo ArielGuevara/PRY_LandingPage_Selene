@@ -1,5 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Medical from '../../public/icons/kit-medical.svg'
+import Vision from '../../public/icons/eye-heart.svg'
+import Brain from '../../public/icons/brain.svg'
 ---
 <Layout>
     <div class="w-full mx-auto -mt-26 z-0 relative flex items-center justify-start"  style={
@@ -19,6 +22,59 @@ import Layout from "../layouts/Layout.astro";
             <p class="sm:p-5">Bienvenidos a SeleDental, tu clínica dental integral donde combinamos experiencia, tecnología y calidez humana para ofrecerte los mejores tratamientos odontológicos. Nos enorgullece contar con un equipo de profesionales altamente capacitados y en constante actualización, quienes trabajan con equipos de última generación para garantizar diagnósticos precisos y procedimientos seguros. En SeleDental entendemos que cada sonrisa es única, por eso diseñamos planes de tratamiento personalizados que se adaptan a tus necesidades específicas, ya sea que requieras una limpieza rutinaria, un blanqueamiento profesional, ortodoncia con brackets tradicionales o invisibles, implantes dentales permanentes o atención de emergencia. Nuestro moderno consultorio está diseñado para brindarte comodidad y tranquilidad durante tu visita, mientras nuestro personal amable te guía en cada paso del proceso. Facilitamos tu experiencia con múltiples opciones para agendar citas - por teléfono, WhatsApp o nuestro sistema online - y ofrecemos financiamiento accesible para que los tratamientos de calidad estén al alcance de todos. Desde la atención preventiva para los más pequeños hasta complejas rehabilitaciones bucales, en SeleDental nos comprometemos a cuidar la salud de tu sonrisa durante todas las etapas de tu vida. Visítanos y descubre por qué somos la elección preferida de tantas familias para su cuidado dental integral. Tu sonrisa es nuestro mejor aval.</p>
         </div>
         <img class="w-160 h-auto" src="/images/aboutUshome.jpg" alt="clinica">
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-8 p-10 items-center justify-center text-black" style="background: #c4aae6">
+        <div class="flex flex-col justify-center items-center w-90">
+            <Medical/>
+            <h3 class="font-extrabold text-2xl text-primary">Nuestra Mision</h3>
+            <p>En SeleDental, nos dedicamos a brindar atención dental integral de excelencia, centrada en tu bienestar y comodidad. Buscamos transformar vidas a través de sonrisas saludables, utilizando tecnología avanzada, tratamientos personalizados y un enfoque humano que prioriza tu confianza y satisfacción.
+               <br> Comprometidos con la prevención, la educación en salud bucal y resultados duraderos, trabajamos cada día para ser tu aliado en el cuidado dental, ofreciendo soluciones accesibles y un servicio cálido que marca la diferencia.</p>
+        </div>
+        <div class="flex flex-col justify-center items-center w-90">
+            <Vision/>
+            <h3 class="font-extrabold text-2xl text-primary">Nuestra Vision</h3>
+            <p>Aspiramos a ser referentes en excelencia odontológica, reconocidos por nuestra innovación, calidad humana y compromiso con la salud bucal integral. Buscamos transformar el estándar de atención dental mediante:
+            </p>
+            <ul class="list-disc list-inside pl-10">
+                <li>Tecnología de vanguardia que garantice tratamientos precisos y mínimamente invasivos.</li>
+                <li>Crecimiento continuo de nuestro equipo profesional y servicios.</li>
+                <li>Accesibilidad sin comprometer la calidad.</li>
+                <li>Relaciones basadas en confianza con cada paciente.</li>
+            </ul>
+
+        </div>
+        <div class="flex flex-col justify-center items-center w-90">
+            <Brain/>
+            <h3 class="font-extrabold text-2xl text-primary">Nuestra Filosofia</h3>
+            <p>En el corazón de nuestra clínica late una filosofía humanizada donde cada sonrisa cuenta una historia. Creemos en:
+            </p>
+            <p class="text-primary font-extrabold">
+                "Cuidado con ciencia y alma"
+            </p>
+            <ul class="list-disc list-inside pl-10">
+                <li>Tratamientos basados en evidencia científica pero aplicados con calidez.</li>
+                <li>Prevención antes que intervención, educando para sonrisas más sanas</li>
+                <li>Honestidad transparente: solo recomendamos lo que realmente necesitas</li>
+                <li>Acompañamiento personalizado, porque cada paciente es único</li>
+            </ul>
+        </div>
+    </div>
+    <div class="flex flex-col sm:flex-row tems-stretch min-h-[500px]">
+        <div class="relative sm:w-1/2 w-full overflow-hidden">
+            <img
+                src="../../public/images/aboutUsProfessional.jpg"
+                alt="profesionales"
+                class="absolute h-full w-full object-cover scale-110 hover:scale-100 transition-transform duration-500"
+            >
+        </div>
+        <div class="flex flex-col justify-center items-start px-10 w-1/2">
+            <h3 class="text-primary font-extrabold text-3xl pb-10 mb-8 relative inline-block group">
+                <span class="relative z-10">Odontologos Calificados</span>
+                <span class="absolute bottom-7 left-0 h-[2px] bg-primary w-40 group-hover:w-full transition-all duration-500 origin-center"></span>
+            </h3>
+            <p>En SeleDental contamos con un equipo de odontólogos altamente calificados, comprometidos con la excelencia en cada tratamiento. Nuestros profesionales cuentan con formación especializada en las principales universidades del país y se mantienen en constante actualización mediante certificaciones internacionales y participación en congresos odontológicos. Cada miembro de nuestro staff combina conocimiento técnico avanzado con un trato humano y cercano, entendiendo que detrás de cada sonrisa hay una persona con necesidades únicas. Desde odontopediatras hasta especialistas en implantes y ortodoncia, nuestro equipo multidisciplinario trabaja en conjunto para ofrecerte soluciones integrales con los más altos estándares de calidad y seguridad. Tu salud bucal está en manos de expertos que aman lo que hacen y se preocupan genuinamente por tu bienestar. Confía en profesionales que ven más allá de los dientes: vemos sonrisas que transforman vidas.</p>
+        </div>
     </div>
 
 </Layout>
