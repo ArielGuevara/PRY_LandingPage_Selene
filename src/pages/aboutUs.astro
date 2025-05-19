@@ -24,7 +24,7 @@ import Brain from '../../public/icons/brain.svg'
         <img class="w-160 h-auto" src="/images/aboutUshome.jpg" alt="clinica">
     </div>
 
-    <div class="flex flex-col sm:flex-row gap-8 p-10 items-center justify-center text-black" style="background: #c4aae6">
+    <div class="flex flex-col sm:flex-row gap-8 sm:p-10 p-5 items-center justify-center text-black" style="background: #c4aae6">
         <div class="flex flex-col justify-center items-center w-90">
             <Medical/>
             <h3 class="font-extrabold text-2xl text-primary">Nuestra Mision</h3>
@@ -60,20 +60,23 @@ import Brain from '../../public/icons/brain.svg'
             </ul>
         </div>
     </div>
-    <div class="flex flex-col sm:flex-row tems-stretch min-h-[500px]">
-        <div class="relative sm:w-1/2 w-full overflow-hidden">
+    <div class="flex flex-col sm:flex-row items-stretch min-h-[500px]">
+        <!-- Contenedor de imagen - Visible en todas las pantallas -->
+        <div class="sm:w-1/2 w-full h-[300px] sm:h-auto overflow-hidden"> <!-- Altura fija en móvil -->
             <img
-                src="../../public/images/aboutUsProfessional.jpg"
-                alt="profesionales"
-                class="absolute h-full w-full object-cover scale-110 hover:scale-100 transition-transform duration-500"
+                    src="../../public/images/aboutUsProfessional.jpg"
+                    alt="profesionales"
+                    class="w-full h-full object-cover sm:scale-110 sm:hover:scale-100 transition-transform duration-500"
             >
         </div>
-        <div class="flex flex-col justify-center items-start px-10 w-1/2">
-            <h3 class="text-primary font-extrabold text-3xl pb-10 mb-8 relative inline-block group">
+
+        <!-- Contenedor de texto -->
+        <div class="sm:w-1/2 w-full flex flex-col justify-center items-start p-6 sm:px-10">
+            <h3 class="text-primary font-extrabold text-2xl sm:text-3xl pb-8 sm:pb-10 mb-6 sm:mb-8 relative inline-block group">
                 <span class="relative z-10">Odontologos Calificados</span>
-                <span class="absolute bottom-7 left-0 h-[2px] bg-primary w-40 group-hover:w-full transition-all duration-500 origin-center"></span>
+                <span class="absolute bottom-6 sm:bottom-7 left-0 h-[2px] bg-primary w-40 group-hover:w-full transition-all duration-500 origin-center"></span>
             </h3>
-            <p>En SeleDental contamos con un equipo de odontólogos altamente calificados, comprometidos con la excelencia en cada tratamiento. Nuestros profesionales cuentan con formación especializada en las principales universidades del país y se mantienen en constante actualización mediante certificaciones internacionales y participación en congresos odontológicos. Cada miembro de nuestro staff combina conocimiento técnico avanzado con un trato humano y cercano, entendiendo que detrás de cada sonrisa hay una persona con necesidades únicas. Desde odontopediatras hasta especialistas en implantes y ortodoncia, nuestro equipo multidisciplinario trabaja en conjunto para ofrecerte soluciones integrales con los más altos estándares de calidad y seguridad. Tu salud bucal está en manos de expertos que aman lo que hacen y se preocupan genuinamente por tu bienestar. Confía en profesionales que ven más allá de los dientes: vemos sonrisas que transforman vidas.</p>
+            <p class="text-sm sm:text-base">En SeleDental contamos con un equipo de odontólogos altamente calificados, comprometidos con la excelencia en cada tratamiento. Nuestros profesionales cuentan con formación especializada en las principales universidades del país y se mantienen en constante actualización mediante certificaciones internacionales y participación en congresos odontológicos. Cada miembro de nuestro staff combina conocimiento técnico avanzado con un trato humano y cercano, entendiendo que detrás de cada sonrisa hay una persona con necesidades únicas. Desde odontopediatras hasta especialistas en implantes y ortodoncia, nuestro equipo multidisciplinario trabaja en conjunto para ofrecerte soluciones integrales con los más altos estándares de calidad y seguridad. Tu salud bucal está en manos de expertos que aman lo que hacen y se preocupan genuinamente por tu bienestar. Confía en profesionales que ven más allá de los dientes: vemos sonrisas que transforman vidas.</p>
         </div>
     </div>
 
