@@ -4,76 +4,105 @@ import Layout from '../layouts/Layout.astro';
 import Estethoscope from '../../public/icons/stethoscope.svg'
 import Calendar from '../../public/icons/calendar-week.svg'
 import CalendarCheck from '../../public/icons/calendar-check.svg'
+import Clean from '../../public/icons/clean.svg'
+import Bracket from '../../public/icons/bracket.svg'
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-    <!--<section class="w-full -mt-26 mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg slider" id="slider">-->
-    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--        <img src="/images/slider_001.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
-    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
-    <!--            <h2 class="text-3">-->
-    <!--                Imagen 1-->
-    <!--            </h2>-->
-    <!--            <p>-->
-    <!--                hola mundo-->
-    <!--            </p>-->
-    <!--        </div>-->
-    <!--    </figure>-->
-    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--        <img src="/images/slider_002.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
-    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
-    <!--            <h2 class="text-3">-->
-    <!--                Imagen 2-->
-    <!--            </h2>-->
-    <!--            <p>-->
-    <!--                hola mundo-->
-    <!--            </p>-->
-    <!--        </div>-->
-    <!--    </figure>-->
-    <!--    <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--        <img src="/images/footer_1.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
-    <!--        <div class="absolute inset-20 w-[90%] mx-auto h-max mt-50 space-y-4 py-8 z-10 hidden md:block">-->
-    <!--            <h2 class="text-3">-->
-    <!--                Imagen 3-->
-    <!--            </h2>-->
-    <!--            <p>-->
-    <!--                hola mundo-->
-    <!--            </p>-->
-    <!--        </div>-->
-    <!--    </figure>-->
-
+    <!--<section class="w-full mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg slider relative" id="slider">-->
+    <!--    <div class="slider-wrapper relative">-->
+    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--            <img src="/images/slider_001.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
+    <!--        </figure>-->
+    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--            <img src="/images/slider_002.jpg" alt="Slider Image2" class="w-full h-full block object-cover" />-->
+    <!--        </figure>-->
+    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--            <img src="/images/footer_1.jpg" alt="Slider Image3" class="w-full h-full block object-cover" />-->
+    <!--        </figure>-->
+    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
+    <!--            <img src="/images/slider_004.jpg" alt="Slider Image4" class="w-full h-full block object-cover" />-->
+    <!--        </figure>-->
+    <!--    </div>-->
+    <!--    &lt;!&ndash; Botones de navegación &ndash;&gt;-->
+    <!--    <button class="slider-prev bg-white rounded-full absolute left-4 top-1/2 transform -translate-y-1/2 z-20" data-button="prev">-->
+    <!--        <img src="/icons/chevron-left.svg" alt="boton_izquierda" class="w-8 aspect-square md:w-10" />-->
+    <!--    </button>-->
+    <!--    <button class="slider-next bg-white rounded-full absolute right-4 top-1/2 transform -translate-y-1/2 z-20" data-button="next">-->
+    <!--        <img src="/icons/chevron-right.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10" />-->
+    <!--    </button>-->
+    <!--</section>-->
     <div class="py-28 flex flex-col sm:flex-row justify-center items-center gap-8">
         <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
-            <div class="bg-primary rounded-full p-4">
+            <div class="bg-primary rounded-full p-4 mb-5">
                 <Estethoscope/>
             </div>
-            <div class="text-center text-sm mt-4 text-black">
-                lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+            <h3 class="text-primary font-black text-xl">Nuestros Odontologos</h3>
+            <div class="text-start text-sm mt-4 text-black">
+                Contamos con un equipo de odontólogos altamente calificados y apasionados por brindarte la mejor atención dental. Cada uno de nuestros profesionales está comprometido con tu bienestar, utilizando técnicas avanzadas y un enfoque humano para cuidar de tu sonrisa.
             </div>
         </div>
         <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
-            <div class="bg-primary rounded-full p-4">
+            <div class="bg-primary rounded-full p-4 mb-5">
                 <Calendar/>
             </div>
-            <div class="text-center text-sm mt-4 text-black">
-                lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+            <h3 class="text-primary font-black text-xl">Citas</h3>
+            <div class="text-start text-sm mt-4 text-black">
+                Queremos que tu experiencia desde la reserva hasta la consulta sea sencilla, rápida y sin complicaciones. Ofrecemos múltiples opciones para que programes tu cita de la manera que más te convenga.
             </div>
         </div>
         <div>
             <!--<div class="opaque-bg relative rounded-full p-4 bg-primary  hover:scale-110 transition-transform duration-300 ">-->
             <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
-                <div class="bg-primary rounded-full p-4">
+                <div class="bg-primary rounded-full p-4 mb-5">
                     <CalendarCheck/>
                 </div>
-                <div class="text-center text-sm mt-4 text-black">
-                    lorem ipsum dolorasdfasdfasdasdfasdfasdf asd fa sf asdf asdf a sit amet, consectetur adipisicing elit. Quisquam, voluptatibus.
+                <h3 class="text-primary font-black text-xl">Citas Agendadas</h3>
+                <div class="text-start text-sm mt-4 text-black">
+                    Quieres enterarte como se encuentran agendadas tus citas con nosotros, haz un clic aqui y recuerda cuando debes visitarnos.
                 </div>
             </div>
         </div>
     </div>
+    <div class="p-10 text-center">
+        <h3 class="text-4xl font-extrabold">Nuestros Servicios</h3>
+        <p class="mx-[20%]">En SeleDental ofrecemos tratamientos integrales para cuidar, reparar y embellecer tu sonrisa con tecnología avanzada y un enfoque personalizado. Desde prevención hasta soluciones estéticas y funcionales, cubrimos todas tus necesidades dentales</p>
+        <div class="flex justify-center items-center gap-8 sm:flex-row flex-col mt-10">
+            <div class="flex flex-col justify-center items-center w-80">
+                <div class="bg-background border border-primary-light hover:bg-primary shadow-2xl  rounded-sm p-4 mb-5 w-20 flex justify-center items-center ">
+                    <Clean/>
+                </div>
+                <h3 class="text-primary font-black text-xl">Blanquemiento</h3>
+                <p>Recupera el brillo natural de tus dientes con un tratamiento seguro y efectivo.</p>
+            </div>
+            <div class="flex flex-col justify-center items-center w-80">
+                <div class="bg-background border border-primary-light hover:bg-primary shadow-2xl  rounded-sm p-4 mb-5 w-20 flex justify-center items-center">
+                    <Bracket/>
+                </div>
+                <h3 class="text-primary font-black text-xl">Brackets</h3>
+                <p>Corrige la alineación de tus dientes con opciones clásicas o discretas.</p>
+            </div>
+            <div class="flex flex-col justify-center items-center w-80">
+                <div class="bg-background border border-primary-light hover:bg-primary shadow-2xl  rounded-sm p-4 mb-5 w-20 flex justify-center items-center">
+                    <Bracket/>
+                </div>
+                <h3 class="text-primary font-black text-xl">Implantes</h3>
+                <p>Soluciones permanentes que restauran la funcionalidad y estética de tu sonrisa.</p>
+            </div>
+            <div class="flex flex-col justify-center items-center w-80">
+                <div class="bg-background border border-primary-light hover:bg-primary shadow-2xl  rounded-sm p-4 mb-5 w-20 flex justify-center items-center">
+                    <Bracket/>
+                </div>
+                <h3 class="text-primary font-black text-xl">Extracciones</h3>
+                <p>Procedimientos rápidos y sin dolor, con cuidados postoperatorios personalizados.</p>
+            </div>
+        </div>
+    </div>
+
     <div class="bg-primary block p-8">
         <div class="flex justify-center items-center gap-4 sm:flex-row flex-col">
             <img class="w-180 h-auto"  src="/images/dentalCare.png" alt="denatalCare">

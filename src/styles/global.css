@@ -2,7 +2,8 @@
 
 :root {
     --background: #ffffff;
-    --foreground: #171717;
+    --foreground: #221b28;
+    /*171717*/
 
     --primary: #9d55fc;
     --primary-light: #b77fff;
@@ -27,7 +28,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #0a0a0a;
+        --background: #221b28;
         --foreground: #ededed;
     }
 }
@@ -55,6 +56,8 @@
         @apply z-[100] self-center justify-self-end;
     }
 }
+
+
 
 
 body {

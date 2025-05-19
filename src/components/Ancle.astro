@@ -5,4 +5,4 @@ interface Props {
 }
 const {text, path} = Astro.props
 ---
-<a href={`#${path}`} class="flex hover:bg-primary-light h-full items-center p-2 text-white">{text}</a>
+<a href={path} class="flex hover:bg-primary-light h-full items-center p-2 text-white">{text}</a>
