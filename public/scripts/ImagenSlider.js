@@ -1,5 +1,6 @@
 export default class ImageSlider {
     constructor(options) {
+        console.log("Funciona correctamente el archivo js")
         this.currentIndex = 0;
         this.autoPlayInterval = null;
         this.isDragging = false;
