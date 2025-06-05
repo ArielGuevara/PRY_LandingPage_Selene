@@ -1,9 +1,26 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"],
+  "include": [
+    ".astro/types.d.ts",
+    "**/*"
+  ],
+  "exclude": [
+    "dist"
+  ],
   "paths": {
-    "@lib/*": ["lib/*"],
-    "@components/*": ["components/*"]
+    "@lib/*": [
+      "lib/*"
+    ],
+    "@components/*": [
+      "components/*"
+    ]
+  },
+  "compilerOptions": {
+    "module": "ES6",
+    "target": "ES6",
+    "outDir": "./public/scripts",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node"
   }
 }

@@ -8,6 +8,7 @@ import Clean from '../../public/icons/toothbrush.svg'
 import Bracket from '../../public/icons/toothbracket.svg'
 import Implant from '../../public/icons/implant.svg'
 import Pliers from '../../public/icons/pliers.svg'
+import Slider from '../../src/components/ImagenSlider.astro'
 
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -15,29 +16,7 @@ import Pliers from '../../public/icons/pliers.svg'
 ---
 
 <Layout>
-    <!--<section class="w-full mx-auto max-w-screen-lg overflow-hidden text-white rounded-lg slider relative" id="slider">-->
-    <!--    <div class="slider-wrapper relative">-->
-    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--            <img src="/images/slider_001.jpg" alt="Slider Image1" class="w-full h-full block object-cover" />-->
-    <!--        </figure>-->
-    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--            <img src="/images/slider_002.jpg" alt="Slider Image2" class="w-full h-full block object-cover" />-->
-    <!--        </figure>-->
-    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--            <img src="/images/footer_1.jpg" alt="Slider Image3" class="w-full h-full block object-cover" />-->
-    <!--        </figure>-->
-    <!--        <figure class="relative w-full h-full aspect-video slider-childs">-->
-    <!--            <img src="/images/slider_004.jpg" alt="Slider Image4" class="w-full h-full block object-cover" />-->
-    <!--        </figure>-->
-    <!--    </div>-->
-    <!--    &lt;!&ndash; Botones de navegación &ndash;&gt;-->
-    <!--    <button class="slider-prev bg-white rounded-full absolute left-4 top-1/2 transform -translate-y-1/2 z-20" data-button="prev">-->
-    <!--        <img src="/icons/chevron-left.svg" alt="boton_izquierda" class="w-8 aspect-square md:w-10" />-->
-    <!--    </button>-->
-    <!--    <button class="slider-next bg-white rounded-full absolute right-4 top-1/2 transform -translate-y-1/2 z-20" data-button="next">-->
-    <!--        <img src="/icons/chevron-right.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10" />-->
-    <!--    </button>-->
-    <!--</section>-->
+    <Slider/>
     <div class="py-28 flex flex-col sm:flex-row justify-center items-center gap-8">
         <div class="bg-card flex flex-col justify-center items-center p-10 w-80 h-[25%] rounded-sm">
             <div class="bg-primary rounded-full p-4 mb-5">
@@ -115,22 +94,4 @@ import Pliers from '../../public/icons/pliers.svg'
         </div>
     </div>
 
-    <!--    <button class="slider-prev bg-white rounded-full ml-4 " data-button="prev">-->
-    <!--        <img src="../../public/icons/chevron-left.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>-->
-    <!--    </button>-->
-    <!--    <button class="slider-next bg-white rounded-full mr-4 " data-button="next">-->
-    <!--        <img src="../../public/icons/chevron-right.svg" alt="boton_derecha" class="w-8 aspect-square md:w-10"/>-->
-    <!--    </button>-->
-    <!--</section>-->
-
-
-    <!--<div class="w-full mx-auto -mt-26 z-0"  style={-->
-    <!--    {-->
-    <!--        backgroundImage: "url('/images/slider_001.jpg')",-->
-    <!--        backgroundSize: "cover",-->
-    <!--        backgroundPosition: "center",-->
-    <!--        height: "calc(100vh - 150px)"-->
-    <!--    }-->
-    <!--}>-->
-    <!--</div>-->
 </Layout>

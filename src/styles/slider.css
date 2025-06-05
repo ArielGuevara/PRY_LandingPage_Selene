@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* Transiciones suaves */
+.slider-container {
+    perspective: 1000px;
+}
+
+/* Efecto de arrastre */
+.cursor-grabbing {
+    cursor: grabbing;
+}
+
+/* Efecto 3D opcional para los slides */
+.slide {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+    #prevButton, #nextButton {
+        width: 8px;
+        height: 8px;
+        font-size: 0.75rem;
+    }
+
+    #indicators button {
+        width: 6px;
+        height: 6px;
+    }
+}

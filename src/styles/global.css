@@ -33,30 +33,29 @@
     }
 }
 
-@layer components {
-    .slider{
-        @apply grid;
-        grid-template-areas: "slide";
-    }
-    .slider-childs{
-        @apply before:absolute before:inset-0 before:bg-gradient-to-b from-transparent to-black z-10;
-        grid-area: slide;
-    }
+/*@layer components {*/
+/*    .slider{*/
+/*        @apply grid;*/
+/*        grid-template-areas: "slide";*/
+/*    }*/
+/*    .slider-childs{*/
+/*        @apply before:absolute before:inset-0 before:bg-gradient-to-b from-transparent to-black z-10;*/
+/*        grid-area: slide;*/
+/*    }*/
 
-    [data-active]{
-        order: 1;
-        transition: .6s clip-path;
-    }
-    .slider-prev{
-        grid-area: slide;
-        @apply z-[100] self-center justify-self-start;
-    }
-    .slider-next{
-        grid-area: slide;
-        @apply z-[100] self-center justify-self-end;
-    }
-}
-
+/*    [data-active]{*/
+/*        order: 1;*/
+/*        transition: .6s clip-path;*/
+/*    }*/
+/*    .slider-prev{*/
+/*        grid-area: slide;*/
+/*        @apply z-[100] self-center justify-self-start;*/
+/*    }*/
+/*    .slider-next{*/
+/*        grid-area: slide;*/
+/*        @apply z-[100] self-center justify-self-end;*/
+/*    }*/
+/*}*/
 
 
 

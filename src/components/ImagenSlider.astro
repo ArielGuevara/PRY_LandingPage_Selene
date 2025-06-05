@@ -1,0 +1,67 @@
+---
+// Frontmatter de Astro
+import ImageSlider from './ImagenSlider';
+import '../styles/slider.css'
+
+interface Image {
+    src: string;
+    alt: string;
+}
+
+const images: Image[] = [
+    { src: "/images/slider_001.jpg", alt: "Paciente principal" },
+    { src: "/images/slider_002.jpg", alt: "Cuidado_ninio" },
+    { src: "/images/aboutUsProfessional.jpg", alt: "profesional" },
+];
+---
+
+<div class="slider-container">
+    <!-- Elemento raíz para el slider -->
+    <div id="imageSlider" class="relative w-full overflow-hidden">
+        <!-- Contenedor de slides -->
+        <div id="slidesContainer" class="flex transition-transform duration-300">
+            {images.map((image, index) => (
+                    <div
+                            class="w-full flex-shrink-0"
+                            data-index={index}
+                    >
+                        <img
+                                src={image.src}
+                                alt={image.alt}
+                                class="w-full h-auto object-cover"
+                        />
+                    </div>
+            ))}
+        </div>
+
+        <!-- Controles de navegación -->
+        <button id="prevButton" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+            &lt;
+        </button>
+        <button id="nextButton" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 text-black rounded-full w-10 h-10 flex items-center justify-center z-10">
+            &gt;
+        </button>
+
+        <!-- Indicadores/puntos -->
+        <div id="indicators" class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            {images.map((_, index) => (
+                    <button
+                            class="w-3 h-3 rounded-full bg-white/30 hover:bg-white/50 transition-colors"
+                            data-index={index}
+                    ></button>
+            ))}
+        </div>
+    </div>
+</div>
+
+<!-- Inicializamos el slider cuando el DOM esté listo -->
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const { default: ImageSlider } = await import('../../public/scripts/ImagenSlider.js');
+        new ImageSlider({
+            sliderId: 'imageSlider',
+            autoPlay: true,
+            interval: 5000
+        });
+    });
+</script>
