@@ -57,7 +57,7 @@ const images: Image[] = [
 <!-- Inicializamos el slider cuando el DOM esté listo -->
 <script is:inline>
     document.addEventListener('DOMContentLoaded', async () => {
-        const { default: ImageSlider } = await import('../../public/scripts/ImagenSlider.js');
+        const { default: ImageSlider } = await import('/public/scripts/ImagenSlider.js');
         new ImageSlider({
             sliderId: 'imageSlider',
             autoPlay: true,
