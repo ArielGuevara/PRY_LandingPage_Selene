@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Verificar el estado inicial al cargar la página
+    if (window.scrollY > header.offsetHeight) {
+        nav.classList.add('fixed', 'inset-0', 'w-[94%]');
+        nav.classList.remove('relative');
+    } else {
+        nav.classList.remove('fixed', 'w-full');
+        nav.classList.add('relative', 'z-20');
+    }
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > header.offsetHeight) {
             nav.classList.add('fixed', 'inset-0', 'w-[94%]');
