@@ -11,7 +11,7 @@ interface Props {
 const { icon: Icon, alt, title, description } = Astro.props;
 ---
 
-<div class="text-foreground text-center flex justify-center items-center flex-col w-90 bg-gray-100 rounded-lg p-6">
+<div class="text-foreground text-center flex justify-center items-center flex-col w-70 sm:w-90 bg-gray-100 rounded-lg p-6">
     <div class="rounded-full bg-primary-light p-4 mb-4">
         <Icon class="w-12 h-12 text-foreground" aria-label={alt} role="img" />
     </div>
