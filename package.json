@@ -12,7 +12,8 @@
     "@astrojs/vercel": "^8.0.4",
     "@fontsource/poppins": "^5.2.5",
     "@tailwindcss/vite": "^4.0.16",
-    "astro": "^5.7.10"
+    "astro": "^5.7.10",
+    "vite-plugin-svgr": "^4.3.0"
   },
   "devDependencies": {
     "tailwindcss": "^4.1.8"

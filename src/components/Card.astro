@@ -1,0 +1,20 @@
+---
+import type { ComponentType } from "astro";
+
+interface Props {
+    icon: ComponentType;
+    alt: string;
+    title: string;
+    description: string;
+}
+
+const { icon: Icon, alt, title, description } = Astro.props;
+---
+
+<div class="text-foreground text-center flex justify-center items-center flex-col w-90 bg-gray-100 rounded-lg p-6">
+    <div class="rounded-full bg-primary-light p-4 mb-4">
+        <Icon class="w-12 h-12 text-foreground" aria-label={alt} role="img" />
+    </div>
+    <h3 class="text-lg font-semibold -mb-2 text-primary">{title}</h3>
+    <p class="text-gray-600">{description}</p>
+</div>

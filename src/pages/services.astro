@@ -1,5 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Card from "../../src/components/Card.astro";
+import Clean from '../../public/icons/toothbrush.svg'
+import Bracket from '../../public/icons/toothbracket.svg'
+import Implant from '../../public/icons/implant.svg'
 ---
 <Layout>
     <div class="w-full mx-auto -mt-26 z-0 relative flex items-center justify-start"  style={
@@ -13,8 +17,57 @@ import Layout from "../layouts/Layout.astro";
     <h1 class="text-white text-4xl font-bold mx-15 mt-10 [text-shadow:_2px_2px_4px_rgba(0,0,0,0.7)]">Servicios</h1>
 </div>
 
-    <div class="flex justify-center ">
-        <h2>Nuestros Servicios</h2>
+
+    <div class="group text-center pt-20">
+        <h2 class="inline-block text-2xl font-bold sm:text-3xl p-2">Nuestros Servicios</h2>
+        <span class="block w-40 h-1 bg-primary mx-auto mt-1 transition-all duration-300 group-hover:w-60"></span>
+    </div>
+
+    <div class="text-center p-10">
+        <div class="mx-[5%] sm:mx-[20%]">
+            <p class="  ">
+                En SeleDental ofrecemos tratamientos integrales para cuidar, reparar y embellecer tu sonrisa con tecnología avanzada y un enfoque personalizado. Desde prevención hasta soluciones estéticas y funcionales, cubrimos todas tus necesidades dentales.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-5 text-white p-10 ">
+            <Card
+                alt="blanqueamiento"
+                description="p"
+                icon={Clean}
+                title="Blanqueamiento"
+            />
+            <Card
+                alt="implante"
+                description="p"
+                icon={Implant}
+                title="Blanqueamiento"
+            />
+            <Card
+                    alt="Bracket"
+                    description="p"
+                    icon={Bracket}
+                    title="Blanqueamiento"
+            />
+            <Card
+                    alt="blanqueamiento"
+                    description="p"
+                    icon={Clean}
+                    title="Blanqueamiento"
+            />
+            <Card
+                    alt="implante"
+                    description="p"
+                    icon={Implant}
+                    title="Blanqueamiento"
+            />
+            <Card
+                    alt="Bracket"
+                    description="p"
+                    icon={Bracket}
+                    title="Blanqueamiento"
+            />
+        </div>
     </div>
 
 </Layout>
