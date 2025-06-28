@@ -79,8 +79,8 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
             <Ancle text="Inicio" path="/"/>
             <Ancle text="Nosotros" path="/aboutUs"/>
             <Ancle text="Servicios" path="/services"/>
-            <Ancle text="Contact" path="Contact"/>
-            <Ancle text="Blog" path="Blog"/>
+            <Ancle text="Contact" path="#"/>
+            <Ancle text="Blog" path="#"/>
         </ul>
         <div class="flex flex-row items-center justify-between gap-4 text-white text-3xl">
             <Menu class="sm:hidden cursor-pointer animate-pulse w-8 h-8" id="main-menu" />
@@ -102,8 +102,8 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
          <MenuNav path="/" text="Inicio"/>
          <MenuNav path="/aboutUs" text="Sobre Nosotros"/>
          <MenuNav path="/services" text="Servicios"/>
-         <MenuNav path="Inicio" text="Dentista"/>
-         <MenuNav path="Inicio" text="Contacto"/>
+         <MenuNav path="#" text="Dentista"/>
+         <MenuNav path="#" text="Contacto"/>
      </div>
     <div class="flex flex-col gap-4 text-primary text-3xl pt-4">
         <div class="flex flex-row gap-1">
@@ -171,13 +171,13 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
                 <Row width={20} height={20}/> <FooterText text="Mis servicios" path="/services"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
-                <Row width={20} height={20}/> <FooterText text="Acuerdos de privacidad" path="Privacy"/>
+                <Row width={20} height={20}/> <FooterText text="Acuerdos de privacidad" path="/aboutUs"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
-                <Row width={20} height={20}/> <FooterText text="Testimonios" path="Testimonials"/>
+                <Row width={20} height={20}/> <FooterText text="Testimonios" path="/aboutUs"/>
             </div>
             <div class="flex flex-row text-primary-light my-4">
-                <Row/> <FooterText text="Agentar Cita" path="AgendCite"/>
+                <Row/> <FooterText text="Agentar Cita" path="http://localhost:5173/registro"/>
             </div>
         </div>
         <div>
@@ -207,7 +207,7 @@ import SvgAncleHeader from "../components/SvgAncleHeader.astro";
             <p class="text-gray-300 text-sm my-2">Suscribete y obten descuentos en limpiezas y blanquemientos dentales para el proximo mes</p>
             <h4 class="my-4 border-b-1 p-2">Email</h4>
             <div class="flex bg-primary items-center justify-center h-12 hover:bg-primary-light cursor-pointer" onsubmit="">
-               <a href="#" class="cursor-pointer">Agendar Cita</a>
+               <a href="http://localhost:5173/registro" class="cursor-pointer">Agendar Cita</a>
             </div>
         </div>
         <div>
